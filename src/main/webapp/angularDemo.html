@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>angularDemo</title>
+	<script src="angular.min.js"></script>
+	<script>
+		//定义了一个叫myApp的模块
+		// var app = angular.module('myApp',[]);
+
+		var app2 = angular.module('myApp2',[])
+
+		// //定义控制器
+		// app.controller('myController',function($scope){
+		// 	//定义数组
+		// 	$scope.list = [100,192,203,434];
+		// });
+
+		app2.controller('myController2',function($scope){
+			//定义对象数组
+			$scope.list= [
+				{name:'张三',shuxue:100,yuwen:93},
+				{name:'李四',shuxue:88,yuwen:87},
+				{name:'王五',shuxue:77,yuwen:56}
+			];	
+		});
+	</script>
+
+</head>
+<body ng-app="myApp2" ng-controller="myController2">
+	<table>
+		<!-- <tr ng-repeat="x in list">
+			<td>{{x}}</td>
+		</tr> -->
+
+		<tr>
+			<td>姓名1</td>
+			<td>数学</td>
+			<td>语文</td>
+		</tr>
+		<tr ng-repeat="entity in list">
+			<td>{{entity.name}}</td>
+			<td>{{entity.shuxue}}</td>
+			<td>{{entity.yuwen}}</td>
+		</tr>
+
+	</table>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>angularDemo</title>
+	<script src="angular.min.js"></script>
+	<script>
+		//定义了一个叫myApp的模块
+		// var app = angular.module('myApp',[]);
+
+		var app2 = angular.module('myApp2',[])
+
+		// //定义控制器
+		// app.controller('myController',function($scope){
+		// 	//定义数组
+		// 	$scope.list = [100,192,203,434];
+		// });
+
+		app2.controller('myController2',function($scope){
+			//定义对象数组
+			$scope.add1 = function() {
+				return parseInt($scope.x)+parseInt($scope.y);
+			}
+			$scope.add = function() {
+				$scope.z = parseInt($scope.x)+parseInt($scope.y);
+			}
+		});
+	</script>
+
+</head>
+<body ng-app="myApp2" ng-controller="myController2" ng-init="myname2='ZPY'">
+	
+	x:<input ng-model="x" >
+	y:<input ng-model="y" >
+	运算结果：{{add1()}}<br/>
+	<button ng-click="add()">运算</button>
+	结果：{{z}}<br/>
+
+	<!-- 双向绑定 -->
+	<input ng-model="myname" />
+	<br/>
+	{{myname}},你好！
+	<br/>
+
+	<!-- 定义初始化变量ng-init="myname2='ZPY'" -->
+	{{myname2}},你好！
+
+</body>
+</html>
